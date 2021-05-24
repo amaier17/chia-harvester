@@ -1,0 +1,6 @@
+#!/bin/bash
+
+. ./activate
+chia init -c /opt/main-ca/
+chia init
+
