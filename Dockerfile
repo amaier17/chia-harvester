@@ -10,7 +10,7 @@ RUN useradd -ms /bin/bash chia
 RUN echo "chia ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER chia
 
-COPY ./init-chia.sh /home/chia/init-chia.sh
+COPY ./entrypoint.sh /home/chia/entrypoint.sh
 
 WORKDIR /home/chia
 RUN git clone https://github.com/Chia-Network/chia-blockchain.git
@@ -18,3 +18,5 @@ RUN git clone https://github.com/Chia-Network/chia-blockchain.git
 WORKDIR /home/chia/chia-blockchain
 RUN sh install.sh
 
+
+ENTRYPOINT ["bash", "/home/chia/entrypoint.sh"]
