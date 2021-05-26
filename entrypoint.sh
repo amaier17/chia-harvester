@@ -13,5 +13,7 @@ do
 done
 
 chia start harvester
+pushd /home/chia/chiadog
+./start.sh &> ~/chiadog.log &
 
 while true; do sleep 30; done;
