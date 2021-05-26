@@ -1,4 +1,5 @@
 FROM ubuntu:20.04
+ENV TZ America/Edmonton
 
 LABEL maintainer="amaier17@gmail.com"
 LABEL version="0.1"
