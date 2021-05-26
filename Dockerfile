@@ -13,7 +13,7 @@ USER chia
 COPY ./entrypoint.sh /home/chia/entrypoint.sh
 
 WORKDIR /home/chia
-RUN git clone https://github.com/Chia-Network/chia-blockchain.git
+RUN git clone https://github.com/Chia-Network/chia-blockchain.git -b 1.1.6
 
 WORKDIR /home/chia/chia-blockchain
 RUN sh install.sh
