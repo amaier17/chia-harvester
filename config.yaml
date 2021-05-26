@@ -3,7 +3,7 @@
 
 # This is useful to differentiate multiple chiadog
 # instances monitoring multiple harvesters
-notification_title_prefix: 'Chia-storanator'
+notification_title_prefix: 'Chia'
 log_level: INFO
 
 # Only one consumer can be enabled at a time, you can
