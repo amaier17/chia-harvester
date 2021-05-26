@@ -24,3 +24,14 @@ our plots and our main certificates are at /home/amaier/main_ca:
 docker run --name harvester0 -d --rm -v "/home/amaier/main_ca:/opt/main_ca" -v "/mnt/plots/disk0:/mnt/plots/disk0" -v "/mnt/plots/disk1:/mnt/plots/disk1" -t harvester:latest /mnt/plots/disk0 /mnt/plots/disk1
 ```
 
+## Executing status call commands
+You can launch commands to the running docker via `docker exec`:
+
+```
+docker exec -it harvester0 venv/bin/chia show -s
+```
+or
+```
+docker exec -it harvester0 cat /home/chia/.chia/mainnet/log/debug.log
+```
+
