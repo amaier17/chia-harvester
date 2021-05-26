@@ -9,7 +9,7 @@ To start up a harvester only node you will need the following:
 ## Building the docker
 First you need to build the docker container:
 ```
-docker build -t harvester:latest .
+docker build --build-arg hostname=$HOSTNAME -t harvester:latest .
 ```
 
 ## Running the docker
