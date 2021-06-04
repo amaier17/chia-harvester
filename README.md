@@ -36,3 +36,7 @@ or
 docker exec -it harvester0 cat /home/chia/.chia/mainnet/log/debug.log
 ```
 
+## Monitoring the status
+This repo contains a monitor.tmux script that will open up some windows for monitoring the harvester.
+To run this simply start up a tmux session and `./monitor.tmux` run the script.
+
