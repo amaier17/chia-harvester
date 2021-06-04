@@ -1,5 +1,6 @@
 FROM ubuntu:20.04
 ENV TZ America/Edmonton
+ENV DEBIAN_FRONTEND=noninteractive
 ARG hostname
 
 LABEL maintainer="amaier17@gmail.com"
