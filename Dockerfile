@@ -24,7 +24,7 @@ COPY ./config.yaml /home/chia/chiadog/config.yaml
 RUN sed -i "s/'Chia'/'Chia-$hostname'/" /home/chia/chiadog/config.yaml
 
 WORKDIR /home/chia
-RUN git clone https://github.com/Chia-Network/chia-blockchain.git -b 1.1.6
+RUN git clone https://github.com/Chia-Network/chia-blockchain.git -b 1.2.3
 
 WORKDIR /home/chia/chia-blockchain
 RUN sh install.sh
