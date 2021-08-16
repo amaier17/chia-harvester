@@ -5,9 +5,7 @@ PLOT_PATH=${PLOT_PATH:-/mnt/plots}
 EC_NODE=${EC_NODE:-ec-full0}
 
 create_args() {
-	plot_folders=( `find $PLOT_PATH -name "*.plot" -type f -exec dirname {} \;` )
-	plot_folders=( `for i in "${plot_folders[@]}"; do echo $i; done | sort -u` )
-
+	plot_folders=( `find $PLOT_PATH -type d` )
 	mount_args=( "-v $CA_PATH:/opt/main_ca" )
 	run_args=( "$EC_NODE" )
 	index=0
