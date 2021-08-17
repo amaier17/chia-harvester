@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CA_PATH=${CA_PATH:-/home/amaier/main_ca}
+CA_PATH=${CA_PATH:-$HOME/main_ca}
 PLOT_PATH=${PLOT_PATH:-/mnt/plots}
 EC_NODE=${EC_NODE:-ec-full0}
 PING_URL=${PING_URL:-N/A}
