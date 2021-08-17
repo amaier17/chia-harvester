@@ -2,6 +2,8 @@ FROM ubuntu:20.04
 ENV TZ America/Edmonton
 ENV DEBIAN_FRONTEND=noninteractive
 ARG hostname
+ARG ping_url
+ARG discord_url
 
 LABEL maintainer="amaier17@gmail.com"
 LABEL version="0.1"
@@ -21,7 +23,7 @@ RUN git clone https://github.com/martomi/chiadog.git
 WORKDIR /home/chia/chiadog
 RUN /bin/bash ./install.sh
 COPY ./config.yaml /home/chia/chiadog/config.yaml
-RUN sed -i "s/'Chia'/'Chia-$hostname'/" /home/chia/chiadog/config.yaml
+RUN sed -i "s|'Chia'|'Chia-$hostname'|;s|PING_URL|$ping_url|;s|DISCORD_URL|$discord_url|" /home/chia/chiadog/config.yaml
 
 WORKDIR /home/chia
 RUN git clone https://github.com/Chia-Network/chia-blockchain.git -b 1.2.3

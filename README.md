@@ -9,7 +9,7 @@ To start up a harvester only node you will need the following:
 ## Building the docker
 First you need to build the docker container:
 ```
-docker build --build-arg hostname=$HOSTNAME -t harvester:latest .
+docker build --build-arg hostname=$HOSTNAME --build-arg discord_url=<webhook for discord url> ping_url=<webhook for health.io url> -t harvester:latest .
 ```
 
 ## Running the docker

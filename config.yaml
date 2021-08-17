@@ -23,8 +23,8 @@ chia_logs:
 # Enable this and chiadog will ping a remote server every 5 minutes
 # That way you can know that the monitoring is running as expected
 keep_alive_monitor:
-  enable_remote_ping: false
-  ping_url: ''
+  enable_remote_ping: true
+  ping_url: 'PING_URL'
 
 # Enable this and you'll receive a daily summary notification
 # on your farm performance at the specified time of the day.

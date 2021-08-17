@@ -3,6 +3,8 @@
 CA_PATH=${CA_PATH:-/home/amaier/main_ca}
 PLOT_PATH=${PLOT_PATH:-/mnt/plots}
 EC_NODE=${EC_NODE:-ec-full0}
+PING_URL=${PING_URL:-N/A}
+DISCORD_URL=${DISCORD_URL:-N/A}
 
 create_args() {
 	plot_folders=( `find $PLOT_PATH -type d` )
@@ -15,7 +17,15 @@ create_args() {
 		index=$((index+1))
 	done
 }
+if [ $PING_URL == "N/A" ]; then
+	echo "ERROR: you must supply a PING_URL"
+	exit 1
+fi
+if [ $DISCORD_URL == "N/A" ]; then
+	echo "ERROR: you must supply a DISCORD_URL"
+	exit 1
+fi
 create_args
-docker build --build-arg hostname=$HOSTNAME -t harvester:latest .
+docker build --build-arg hostname=$HOSTNAME --build-arg discord_url=$DISCORD_URL --build-arg ping_url=$PING_URL -t harvester:latest .
 docker run --name harvester0 -d --restart always ${mount_args[@]} -t harvester:latest ${run_args[@]}
 
