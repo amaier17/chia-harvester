@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-ENV TZ America/Edmonton
+ENV TZ=America/Edmonton
 ENV DEBIAN_FRONTEND=noninteractive
 ARG hostname
 ARG ping_url
@@ -10,7 +10,7 @@ LABEL version="0.1"
 LABEL description="This container will create a harvester instance for eid-chia"
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y git lsb-release python3 python3-venv sudo
+RUN apt-get install -y git lsb-release python3 python3-venv sudo tzdata
 RUN useradd -ms /bin/bash chia
 RUN echo "chia ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER chia
