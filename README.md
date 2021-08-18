@@ -14,7 +14,7 @@ some environment variables:
 - $PING_URL: The healthchecks.io url to get chiadog to ping (see chiadog for more details) (no default)
 - $DISCORD_URL: The discord integration webhook url for chiadog (see chiadog for more details) (no default)
 
-For the PING_URL AND DISCORD_URL variables, you can set these in /etc/environment to keep them persistent if you wish.
+For the PING_URL and DISCORD_URL variables, you can set these in /etc/environment to keep them persistent if you wish.
 
 ## Building the docker
 First you need to build the docker container:
