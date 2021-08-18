@@ -8,11 +8,11 @@ To start up a harvester only node you will need the following:
 ## Automated building/running
 A start.sh script has been provided here that will search for the correct folders and start the docker. To run this, you simply need to check
 some environment variables:
-$CA_PATH: The path to the ~/.chia/mainnet/config/ssl/ca directory contents copied from the full node (default: $HOME/main_ca)
-$PLOT_PATH: The path to the finished plots parent directory (default: /mnt/plots). It will auto recurse and find all subdirectories with plots
-$EC_NODE: The name of the full node (default: ec-full0)
-$PING_URL: The healthchecks.io url to get chiadog to ping (see chiadog for more details) (no default)
-$DISCORD_URL: The discord integration webhook url for chiadog (see chiadog for more details) (no default)
+- $CA_PATH: The path to the ~/.chia/mainnet/config/ssl/ca directory contents copied from the full node (default: $HOME/main_ca)
+- $PLOT_PATH: The path to the finished plots parent directory (default: /mnt/plots). It will auto recurse and find all subdirectories with plots
+- $EC_NODE: The name of the full node (default: ec-full0)
+- $PING_URL: The healthchecks.io url to get chiadog to ping (see chiadog for more details) (no default)
+- $DISCORD_URL: The discord integration webhook url for chiadog (see chiadog for more details) (no default)
 
 For the PING_URL AND DISCORD_URL variables, you can set these in /etc/environment to keep them persistent if you wish.
 
