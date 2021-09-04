@@ -7,7 +7,6 @@ import time
 from pathlib import Path
 from prometheus_client import start_http_server, Gauge, Enum, Info
 
-PLOT_COUNT = Gauge("chia_plot_count", "Total chia plots")
 LEGACY_PLOT_COUNT = Gauge("chia_legacy_plot_count", "Count of legacy chia plots")
 DISK_TOTAL = Gauge("chia_disk_total_bytes", "Total disk space available")
 DISK_USED = Gauge("chia_disk_used_bytes", "Total disk space used")
@@ -64,7 +63,6 @@ if __name__ == "__main__":
     plot_dir = Path(args.plot_dir)
     while running:
         plots, legacy = count_plots(plot_dir, legacy_re)
-        PLOT_COUNT.set(plots)
         LEGACY_PLOT_COUNT.set(legacy)
         disk_used, disk_free, disk_total = check_disk_space(plot_dir)
         DISK_TOTAL.set(disk_total)
