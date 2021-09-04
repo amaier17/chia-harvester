@@ -18,6 +18,8 @@ ExecStart=/usr/bin/env python3 $EXEC_PATH
 WantedBy=multi-user.target
 EOM
 
+apt install -y python3-pip
+pip3 install -r "$SCRIPT_PATH/requirements.txt"
 systemctl daemon-reload
 systemctl enable chia-harvester-exporter.service
 systemctl start chia-harvester-exporter.service
