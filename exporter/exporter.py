@@ -7,11 +7,11 @@ import time
 from pathlib import Path
 from prometheus_client import start_http_server, Gauge, Enum, Info
 
-PLOT_COUNT = Gauge("plot_count", "Total chia plots")
-LEGACY_PLOT_COUNT = Gauge("legacy_plot_count", "Count of legacy chia plots")
-DISK_TOTAL = Gauge("disk_total_bytes", "Total disk space available")
-DISK_USED = Gauge("disk_used_bytes", "Total disk space used")
-DISK_FREE = Gauge("disk_free_bytes", "Total disk space free")
+PLOT_COUNT = Gauge("chia_plot_count", "Total chia plots")
+LEGACY_PLOT_COUNT = Gauge("chia_legacy_plot_count", "Count of legacy chia plots")
+DISK_TOTAL = Gauge("chia_disk_total_bytes", "Total disk space available")
+DISK_USED = Gauge("chia_disk_used_bytes", "Total disk space used")
+DISK_FREE = Gauge("chia_disk_free_bytes", "Total disk space free")
 
 def parse_args():
     parser = argparse.ArgumentParser(description="This is a prometheus exporter for chia harvesters")
