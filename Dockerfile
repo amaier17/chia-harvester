@@ -18,7 +18,7 @@ USER chia
 COPY ./entrypoint.sh /home/chia/entrypoint.sh
 
 WORKDIR /home/chia
-RUN git clone https://github.com/martomi/chiadog.git
+RUN git clone https://github.com/amaier17/chiadog.git
 
 WORKDIR /home/chia/chiadog
 RUN /bin/bash ./install.sh
