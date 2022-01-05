@@ -27,5 +27,5 @@ if [ $DISCORD_URL == "N/A" ]; then
 fi
 create_args
 docker build --build-arg hostname=$HOSTNAME --build-arg discord_url=$DISCORD_URL --build-arg ping_url=$PING_URL -t harvester:latest .
-docker run --name harvester0 -d --restart always ${mount_args[@]} -t harvester:latest ${run_args[@]}
+docker run --name harvester0 --rm -d ${mount_args[@]} -t harvester:latest ${run_args[@]}
 

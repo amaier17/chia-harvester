@@ -1,0 +1,17 @@
+[Unit]
+Description=Chia Harvester Service
+
+[Service]
+Type=forking
+RemainAfterExit=yes
+
+WorkingDirectory=/home/amaier/chia-harvester
+ExecStart=/home/amaier/chia-harvester/start.sh
+ExecStop=/home/amaier/chia-harvester/stop.sh
+User=amaier
+Group=amaier
+EnvironmentFile=/etc/environment
+
+[Install]
+WantedBy=multi-user.target
+
